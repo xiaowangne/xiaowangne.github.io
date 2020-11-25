@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon">
+    <title>橘子音乐</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="header">
+        </div>
+        <div class="content">
+            <div class="sider">
+                <div class="sider-nav">
+                    <span class="iconfont">&#xe60f;</span>
+                    <span class="iconfont">&#xe6a8;</span>
+                    <span class="iconfont">&#xe6da;</span>
+                    <span class="iconfont">&#xe619;</span>
+                    <span class="iconfont">&#xe75e;</span>
+                </div>
+                <div class="sider-content">
+                    <div class="song-box">
+                    <div class="sang-line" data-unfold='0'>歌曲列表 <span></span></div>
+                    <div class="s-line"></div>
+                </div>
+                <div class="lately-box">
+                    <div class="lately-line" data-unfold='0'>最近播放 <span>[0]</span></div>
+                    <div class="l-line"></div>
+                </div>
+                <div class="like-box">
+                    <div class="like-line" data-unfold='0'>我的喜欢 <span>[0]</span></div>
+                    <div class="ke-line"></div>
+                </div>
+                </div>
+            </div>
+            <div class="content-box">
+                <div class="content-nav">
+                    <div class="nav-box">
+                        <div>乐库</div>
+                        <div>电台</div>
+                        <div>歌单</div>
+                        <div>MV</div>
+                        <div>直播</div>
+                        <div>KTV</div>
+                        <div>歌词</div>
+                    </div>
+
+                </div>
+                <div class="main-content">
+                    <video autoplay src="./kjj.mp4" controls></video>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="switcher">
+                <audio class="audio" src='./music/done for me.mp3' preload></audio>
+                <span class="iconfont perv">&#xe501;</span>
+                <span class="play iconfont" data-index="1">&#xe6e2;</span>
+                <span class="next iconfont">&#xe502;</span>
+            </div>
+            <div class="song-box">
+                <div class="songs">
+                    <div class="song-name">done for me</div>
+                    <div class="speed">倍速<span>▲</span>
+                        <!-- <div class="speed-num">
+                            
+                        </div> -->
+                    </div>
+                </div>
+                <div class="song-line">
+                    <div class="line">
+                        <div class="progress"></div>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="song-time">
+                        <span class="time">
+                            <span class="playMinute">00</span>
+                            <span>:</span>
+                            <span class="playSecond">00</span>
+                            <span>/</span>
+                            <span class="minute">00</span>
+                            <span>:</span>
+                            <span class="second">00</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="song-nav">
+                <div><span class="iconfont like" data-like="none">&#xe61a;</span></div>
+                <div><span class="iconfont">&#xe75e;</span></div>
+                <div><span class="iconfont">&#xe65f;</span></div>
+                <div class="playWay"><span class="iconfont play-way">&#xe6f2;</span>
+                    <div class="way-box d-none">
+                        <div class="single-cycle way-list"><span class="iconfont">&#xe699;</span>&nbsp;&nbsp;单曲循环</div>
+                        <div class="list-cycle way-list active"><span class="iconfont">&#xe6f2;</span>&nbsp;&nbsp;列表循环</div>
+                        <div class="random-play way-list"><span class="iconfont">&#xe612;</span>&nbsp;&nbsp;随机播放</div>
+                        <div class="tri"></div>
+                    </div>
+                    
+                </div>
+                <div class="voiceBox"><span class="iconfont">&#xe50c;</span>
+                    <div class="voice-box d-none">
+                        <div class="voice-line">
+                            <div class="voice-s-line"></div>
+                            <span class="voice-dot"></span>
+                        </div>
+                        <div class="tri"></div>
+                    </div>
+                </div>
+                <div><span class="sound">●音效</span></div>
+                <div><span class="lyric">词</span></div>
+                <div><span class="iconfont">&#xe611;</span></div>
+                <div><span class="iconfont">&#xe60d;</span></div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

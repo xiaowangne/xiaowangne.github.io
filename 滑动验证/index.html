@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>滑动验证</title>
+    <style>
+        body {
+            margin: 0;
+            background: #989a9e;
+        }
+
+        .box {
+            width: 520px;
+            height: 220px;
+            background: rgb(94, 106, 110);
+            overflow: hidden;
+            margin: auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #a6d4fa;
+        }
+
+        input {
+            width: 300px;
+            height: 40px;
+            text-align: center;
+            outline: none;
+            display: block;
+            margin: 0 auto;
+            border: none;
+            color: #333333;
+            background: #ddd;
+        }
+
+        button {
+            display: block;
+            width: 300px;
+            margin: 0 auto;
+            height: 46px;
+            border: none;
+            background: #b8cdf8;
+            outline: none;
+            font-size: 16px;
+            color: #092332;
+            cursor: pointer;
+        }
+
+        .verify {
+            position: absolute;
+            left: 0;
+            top: 240px;
+            right: 0;
+            margin: auto;
+            width: 460px;
+            height: 340px;
+            padding: 15px;
+          
+        }
+
+        .img {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            background: #a6d4fa;
+            border-radius: 10px;
+            background-image: url(./bg.jpg);
+            background-size: 460px 280px;
+        }
+
+        .left,
+        .right {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            position: absolute;
+            box-shadow: 0px 0px 8px 1px rgb(85, 92, 95);
+        }
+
+        .left {
+            background-image: url(./bg.jpg);
+            background-size: 460px 280px;
+            /* left: 0px; */
+            z-index: 99;
+        }
+
+        .right {
+            opacity: 0.4;
+            background: rgb(24, 6, 6);
+        }
+
+        .slide {
+            width: 100%;
+            height: 40px;
+            background: #dddddd;
+            border-radius: 22px;
+            margin-top: 10px;
+            text-align: center;
+            line-height: 40px;
+            color: rgb(122, 122, 122);
+            position: relative;
+            user-select: none;
+
+        }
+
+        .black {
+            width: 40px;
+            height: 40px;
+            background: #a6d4fa;
+            border-radius: 50%;
+            position: absolute;
+            /* left: 0px; */
+            top: 0;
+            cursor: pointer;
+            box-shadow: 0px 0px 8px 1px skyblue;
+        }
+        .strip{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 40px;
+            width: 20px;
+            background: #72a9d2;
+            border-top-left-radius:22px;
+            border-bottom-left-radius:22px;
+        }
+        .shade {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background: rgba(3, 3, 3, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>
+            酷狗注册
+        </h2>
+        <p>
+            <input type="text" placeholder="请输入手机号">
+            <span></span>
+        </p>
+        <p>
+            <button>点击按钮进行验证</button>
+        </p>
+
+    </div>
+    <div class="shade">
+        <div class="verify">
+            <div class="img">
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+            <div class="slide">
+                滑动验证
+                <div class="strip"></div>
+                <div class="black">
+                    <svg t="1591963834883" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="2685" width="20" height="20">
+                        <path d="M64 599h564.4L339.9 887.3h244.8L960 512 584.7 136.7H339.9l288.5 288.4H64z" p-id="2686"
+                            fill="#5e6a6e"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./layer/layer.js"></script>
+    <script>
+        $(function () {
+            // 正则验证手机号
+            let reg = /^1[3456789]\d{9}$/;
+
+
+
+            $("button").click(function () {
+                if ($("input").val() == "") {
+                    layer.msg('请输入手机号');
+                    return;
+                } else {
+                    if (!reg.test($("input").val())) {
+                        layer.msg('请输入正确的手机格式');
+                        $("input").val("");
+                        return;
+                    } else {
+                        $(".shade").show();
+                        random();
+                        blackSlide();
+                    }
+                }
+            });
+            // 生成随机坐标
+            function n(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+
+            // 随机方块坐标
+            let rLeft = 0;
+
+            function random() {
+                // 生成拼图的最大最小坐标
+                let minTop = 10;
+                // console.log($(".img").height());
+                let maxTop = $(".img").height() - $(".right").height() - 10;
+                let minLeft = $(".img").width() / 2;
+                let maxLeft = $(".img").width() - $(".right").width() - 10;
+                // console.log(maxTop, minLeft, maxLeft);
+                let rTop = n(minTop, maxTop);
+                rLeft = n(minLeft, maxLeft);
+                $(".right").css({
+                    top: rTop + "px",
+                    left: rLeft + "px",
+                });
+                $(".left").css({
+                    top: rTop + "px",
+                    left: 0,
+                    backgroundPosition: (-rLeft) + "px " + (-rTop) + "px",
+                });
+                $(".black").css({
+                    left: "0px"
+                });
+                $(".strip").css({
+                            width:"20px"
+                        })
+                // console.log(rLeft, rTop);
+            }
+
+
+            // 滑动验证
+            function blackSlide() {
+                // 鼠标按下事件
+                $(".black").mousedown(function () {
+                    // 最小最小大移动距离
+                    let max = $(".slide").width() - $(this).width();
+                    let min = 0;
+                    let bLeft = 0;
+                    $(document).mousemove(function (e) {
+                        e = e || window.event;
+                        // 移动距离
+                        bLeft = e.pageX - $(".slide").offset().left;
+                        bLeft = bLeft < min ? min : bLeft;
+                        bLeft = bLeft > max ? max : bLeft;
+                        $(".black").css({
+                            left: bLeft + "px"
+                        });
+                        $(".left").css({
+                            left: bLeft + "px"
+                        });
+                        $(".strip").css({
+                            width:bLeft+20+"px"
+                        })
+                    });
+
+                    // 鼠标松开事件
+                    $(document).mouseup(function () {
+                        $(document).unbind();
+                        if (rLeft < (bLeft + 5) && (rLeft > bLeft - 5)) {
+                            layer.msg('验证成功');
+                            $(location).prop('href', 'http://www.kugou.com/')
+                        } else {
+                            layer.msg('验证失败');
+                            random();
+                        }
+
+                    })
+                });
+
+            }
+           
+        })
+    </script>
+</body>
+
+</html>

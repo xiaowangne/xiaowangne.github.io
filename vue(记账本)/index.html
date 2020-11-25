@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #4682b4;
+        }
+
+        /* 字体 */
+        @font-face {
+            font-family: 'iconfont';
+            src: url('./font/iconfont.eot');
+            src: url('./font/iconfont.eot?#iefix') format('embedded-opentype'),
+                url('./font/iconfont.woff2') format('woff2'),
+                url('./font/iconfont.woff') format('woff'),
+                url('./font/iconfont.ttf') format('truetype'),
+                url('./font/iconfont.svg#iconfont') format('svg');
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        #app{
+            display: flex;
+            justify-content: center;
+        }
+        .box {
+            width: 360px;
+            height: 600px;
+            background-color: #ddd;
+            border-radius: 10px;
+            margin-top: 60px;
+            margin-left: 50px;
+            overflow: hidden;
+        }
+
+        .header {
+            padding: 10px 14px;
+            box-sizing: border-box;
+            /* text-align: center; */
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            letter-spacing: 10px;
+            user-select: none;
+        }
+
+        .header-box {
+            width: 100%;
+            padding: 16px 10px 0;
+            background-color: snow;
+            border-radius: 10px;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        .header-box>.income-box {
+            width: 120px;
+            height: 32px;
+            /* background-color: skyblue; */
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            border-radius: 20px;
+            border: 1px solid #2b3033;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header-box>.income-box>.income {
+            width: 60px;
+            height: 100%;
+            text-align: center;
+            line-height: 32px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .header-box>.icon-box {
+            box-sizing: border-box;
+            width: 100%;
+            /* background-color: slateblue; */
+            display: flex;
+            /* flex: 2; */
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 24px;
+        }
+
+        .icon-box>.iFont {
+            width: 20%;
+            height: 72px;
+        }
+
+        .icon-box>.iFont>.iconfont {
+            margin: 0 auto;
+            display: block;
+            font-size: 18px;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 50%;
+            background-color: #4682b4;
+            color: white;
+            cursor: pointer;
+        }
+
+        .icon-box>.iFont>.fonts {
+            padding: 3px;
+            box-sizing: border-box;
+            text-align: center;
+            /* background-color: steelblue; */
+            display: block;
+            font-size: 12px;
+            width: 100%;
+            color: #333;
+        }
+
+        .pay-box {
+            width: 100%;
+            padding: 0 14px;
+            background-color: snow;
+            border-radius: 10px;
+            box-sizing: border-box;
+            /* color: #333; */
+            margin-top: 10px;
+            user-select: none;
+        }
+
+        .pay-box>.account {
+            /* background-color: springgreen; */
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            box-sizing: border-box;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .pay-box>.account-box {
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .account-box>div {
+            width: 60px;
+            height: 28px;
+            text-align: center;
+            line-height: 28px;
+            background-color: #ddd;
+            /* color: #333; */
+            font-size: 12px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .data-box {
+            width: 100%;
+            padding: 5px 14px;
+            background-color: snow;
+            border-radius: 10px;
+            box-sizing: border-box;
+            color: #333;
+            margin-top: 10px;
+            font-size: 14px;
+            overflow: hidden;
+        }
+
+        .data-box>.data {
+            width: 100%;
+            padding: 8px 0;
+        }
+
+        .data>span {
+            display: inline-block;
+        }
+
+        input {
+            margin-left: 20px;
+            border: none;
+            outline: none;
+        }
+
+        .save-box {
+            width: 100%;
+            padding: 5px 3px;
+            /* background-color: snow; */
+            border-radius: 10px;
+            box-sizing: border-box;
+            color: #333;
+            margin-top: 26px;
+            font-size: 14px;
+            overflow: hidden;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            height: 36px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            background-color: #4682b4;
+            cursor: pointer;
+            user-select: none;
+
+        }
+
+        .cosumer-box {
+            width: 100%;
+            padding: 0 10px;
+            /* background-color: snow; */
+            border-radius: 10px;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        .cosumer-box>.cosumer {
+            width: 100%;
+            background-color: snow;
+            border-radius: 10px;
+            box-sizing: border-box;
+            user-select: none;
+            overflow: hidden;
+            margin-top: 10px;
+
+        }
+
+        .cosumer>.left,
+        .content,
+        .right {
+            float: left;
+        }
+
+        .left {
+            width: 20%;
+            height: 50px;
+            position: relative;
+        }
+
+        .left>.iconfont {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: #4682b4;
+            border-radius: 50%;
+            font-size: 26px;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        .content {
+            width: 55%;
+            height: 50px;
+            ;
+            font-size: 12px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 10px 0;
+        }
+        .content div{
+            width: 100%;
+        }
+        .right {
+            width: 25%;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 14px;
+        }
+
+        .income-active {
+            background-color: #4682b4;
+        }
+
+        .account-box>.account-active {
+            background-color: #4682b4;
+        }
+
+        .icon-box>.iFont>.icon-active {
+            font-size: 20px;
+            background-color: #03c03c;
+            transform: scale(1.2);
+        }
+
+        .icon-box>.iFont>.font-active {
+            font-weight: 600;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!--  调度者 VM ViewModel -->
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+    <!-- <script src='https://unpkg.com/vue-router/dist/vue-router.js'></script> -->
+    <!-- 视图 V Views -->
+    <div id='app'>
+        <div class="box">
+            <div class="header">
+                记账本
+            </div>
+            <div class="header-box">
+                <!-- 收入支出 -->
+                <div class="income-box">
+                    <div class="income" :class="{'income-active':item.isActive}" v-for="(item,index) in income"
+                        @click="active(item,income)">
+                        {{item.title}}</div>
+                </div>
+                <div class="icon-box">
+                    <div class="iFont" v-for="(item,index) in iconData">
+                        <span class="iconfont" v-html="item.code" :class="{'icon-active':item.isActive}"
+                            @click="active(item,iconData)"></span>
+                        <span class="fonts" :class="{'font-active':item.isActive}">{{item.title}}</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 账户选择 -->
+            <div class="pay-box">
+                <div class="account">账户选择</div>
+                <div class="account-box">
+                    <div v-for="(item,index) in pay" :class="{'account-active':item.isActive}"
+                        @click="active(item,pay)">{{item.title}}</div>
+                </div>
+            </div>
+
+            <!-- 日期选择 -->
+            <div class="data-box">
+                <div class="data">
+                    <span>日期</span>
+                    <input type="date" v-model="data">
+                </div>
+                <div class="data">
+                    <span>金额</span>
+                    <input type="text" placeholder="输入金额" v-model="money" @change="changeMoney">
+                </div>
+                <div class="data">
+                    <span>备注</span>
+                    <input type="text" placeholder="输入备注" v-model="remake">
+                </div>
+            </div>
+
+            <!-- 保存 -->
+            <div class="save-box">
+                <button @click="save">保存</button>
+            </div>
+
+        </div>
+        <div class="box">
+            <div class="header">
+                消费记录
+            </div>
+            <div class="cosumer-box">
+                <div class="cosumer" v-for="item in saveData">
+                    <div class="left">
+                        <span class="iconfont" v-html="item.code"></span>
+                    </div>
+                    <div class="content">
+                        <div>
+                            <span>{{item.date}}</span>
+                            <span style="margin-left: 20px;">{{item.payment}}</span>
+                        </div>
+                        <div v-if="item.isRemake">备注:{{item.remake}}</div>
+                    </div>
+                    <div class="right">
+                        <span>{{item.money}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 模型 M Model -->
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                income: [{
+                        title: "收入",
+                        isActive: true
+                    },
+                    {
+                        title: "支出",
+                        isActive: false
+                    }
+                ],
+                iconData: [{
+                        title: "餐饮",
+                        code: "&#xe940;",
+                        isActive: false
+                    },
+                    {
+                        title: "购物",
+                        code: "&#xe68c;",
+                        isActive: false
+                    },
+                    {
+                        title: "出行",
+                        code: "&#xe606;",
+                        isActive: false
+                    },
+                    {
+                        title: "健康",
+                        code: "&#xe60f;",
+                        isActive: false
+                    },
+                    {
+                        title: "娱乐",
+                        code: "&#xe643;",
+                        isActive: false
+                    },
+                    {
+                        title: "住房",
+                        code: "&#xe7f2;",
+                        isActive: false
+                    },
+                    {
+                        title: "交通",
+                        code: "&#xe634;",
+                        isActive: false
+                    },
+                    {
+                        title: "人情",
+                        code: "&#xe605;",
+                        isActive: false
+                    },
+                    {
+                        title: "学习",
+                        code: "&#xe7f1;",
+                        isActive: false
+                    },
+                    {
+                        title: "其他",
+                        code: "&#xe646;",
+                        isActive: true
+                    },
+                ],
+                pay: [{
+                        title: "现金",
+                        isActive: true
+                    },
+                    {
+                        title: "支付宝",
+                        isActive: false
+                    },
+                    {
+                        title: "微信",
+                        isActive: false
+                    },
+                    {
+                        title: "信用卡",
+                        isActive: false
+                    },
+                    {
+                        title: "储蓄卡",
+                        isActive: false
+                    },
+                ],
+                data: null,
+                money: null,
+                remake: null,
+                saveData: [],
+            },
+            methods: {
+                active(item, arr) {
+                    if (item.isActive) {
+                        return;
+                    }
+                    for (let i = 0; i < arr.length; i++) {
+                        if (arr[i].isActive) {
+                            arr[i].isActive = false;
+                        }
+                    }
+                    item.isActive = true;
+                },
+                changeMoney() {
+                    let m = parseFloat(this.money);
+                    if (isNaN(m)) {
+                        this.money = null;
+                        return;
+                    }
+                    let val = Math.round(m * 100) / 100;
+                    let value = val.toString().split(".");
+                    if (value.length == 1) {
+                        this.money = val + ".00"
+                        return;
+                    }
+                    if (value.length == 2) {
+                        if (value[1].length < 2) {
+                            this.money = val + "0"
+                            return;
+                        }
+                        this.money = val;
+                    }
+
+                },
+                save() {
+                    let s = {}
+                    for (let i = 0; i < this.income.length; i++) {
+                        if (this.income[i].isActive) {
+                            s["title"] = this.income[i].title;
+                            break;
+                        }
+                    }
+                    for (let i = 0; i < this.iconData.length; i++) {
+                        if (this.iconData[i].isActive) {
+                            s["code"] = this.iconData[i].code;
+                            break;
+                        }
+                    }
+                    for (let i = 0; i < this.pay.length; i++) {
+                        if (this.pay[i].isActive) {
+                            s["payment"] = this.pay[i].title;
+                            break;
+                        }
+                    }
+                    if (this.data == null) {
+                        alert("请选择日期");
+                        return;
+                    }
+                    if (this.money == null) {
+                        alert("请输入金额");
+                        return;
+                    }
+                    s["date"] = this.data;
+                    if (s.title == "收入") {
+                        s["money"] = "+ " + this.money;
+                    } else {
+                        s["money"] = "- " + this.money;
+                    }
+                    s["remake"] = this.remake;
+                    if (this.remake == null) {
+                        s["isRemake"] = false;
+                    } else {
+                        s["isRemake"] = true;
+                    }
+                    this.saveData.push(s);
+                    this.data = null;
+                    this.money = null;
+                    this.remake = null;
+                    // console.log(this.saveData);
+                },
+
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "362508",
+      "name": "列表循环",
+      "font_class": "liebiaoxunhuan",
+      "unicode": "e6f2",
+      "unicode_decimal": 59122
+    },
+    {
+      "icon_id": "685888",
+      "name": "列表",
+      "font_class": "liebiao",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "736200",
+      "name": "爱心",
+      "font_class": "icon4",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "1000159",
+      "name": "下载 帮助页面",
+      "font_class": "xiazaibangzhuyemian",
+      "unicode": "e75e",
+      "unicode_decimal": 59230
+    },
+    {
+      "icon_id": "1033532",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "1491476",
+      "name": "下载",
+      "font_class": "xiazai4",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "1591649",
+      "name": "上一首",
+      "font_class": "shangyishou",
+      "unicode": "e502",
+      "unicode_decimal": 58626
+    },
+    {
+      "icon_id": "1988779",
+      "name": "铅笔",
+      "font_class": "pencil",
+      "unicode": "e6b3",
+      "unicode_decimal": 59059
+    },
+    {
+      "icon_id": "2439820",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "2936485",
+      "name": "随机播放",
+      "font_class": "bofangye-caozuolan-suijibofang",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "3660285",
+      "name": "更多",
+      "font_class": "gengduo",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    },
+    {
+      "icon_id": "4339676",
+      "name": "喇叭",
+      "font_class": "laba",
+      "unicode": "e50c",
+      "unicode_decimal": 58636
+    },
+    {
+      "icon_id": "4826867",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e6e2",
+      "unicode_decimal": 59106
+    },
+    {
+      "icon_id": "5536953",
+      "name": "单曲循环",
+      "font_class": "danquxunhuan",
+      "unicode": "e699",
+      "unicode_decimal": 59033
+    },
+    {
+      "icon_id": "6207101",
+      "name": "音乐",
+      "font_class": "yinyue",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "7031318",
+      "name": "暂停 停止",
+      "font_class": "zantingtingzhi",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "9858084",
+      "name": "信号",
+      "font_class": "xinhao",
+      "unicode": "e6da",
+      "unicode_decimal": 59098
+    },
+    {
+      "icon_id": "10063785",
+      "name": "云",
+      "font_class": "yun",
+      "unicode": "e6a8",
+      "unicode_decimal": 59048
+    },
+    {
+      "icon_id": "11347320",
+      "name": "下一首",
+      "font_class": "xiayishou",
+      "unicode": "e501",
+      "unicode_decimal": 58625
+    },
+    {
+      "icon_id": "12587963",
+      "name": "铃铛",
+      "font_class": "lingdang",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    }
+  ]
+}
