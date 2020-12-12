@@ -12,10 +12,10 @@ body .box {
   align-items: center;
   flex-wrap: wrap;
 }
-.box:first-child{
+.box1{
   width: 30%;
 }
-body .box:last-child{
+body .box2{
   width: 70%;
   left: 30%;
 }
@@ -259,11 +259,4 @@ body .box .there::before {
     box-shadow: 20px 0px 0 10px rgba(167, 44, 190, 0.5), 100px 0px 0 10px #d939f7, 180px 0px 0 10px #d939f7, 260px 0px 0 10px #d939f7, 340px 0px 0 10px #d939f7;
   }
 }
-body .box:first-child {
-  width: 30%;
-  left: 0;
-}
-body .box:last-child {
-  width: 70%;
-  right: 0;
-}
+
