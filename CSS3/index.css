@@ -12,6 +12,13 @@ body .box {
   align-items: center;
   flex-wrap: wrap;
 }
+.box:first-child{
+  width: 30%;
+}
+body .box:last-child{
+  width: 70%;
+  left: 30%;
+}
 body .box .item {
   width: 50%;
 }
