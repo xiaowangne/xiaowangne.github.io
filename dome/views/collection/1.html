@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Betty Smith</title>
+    <link rel="stylesheet" href="/src/css/animate.min.css">
+    <!-- <link rel="stylesheet" href="/src/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/src/css/swiper.min.css">
+    <link rel="stylesheet" href="/src/css/common.css">
+    <link rel="stylesheet" href="/src/css/index.css">
+
+    <script src="/src/js/jquery.min.js"></script>
+    <script src="/src/js/jquery.lettering.js"></script>
+    <script src="/src/js/jquery.textillate.js"></script>
+    <script src="/src/js/wow.min.js"></script>
+    <script src="/src/js/gsap.min.js"></script>
+    <script src="/src/js/ScrollTrigger.min.js"></script>
+    <!-- <script src="/src/js/three.min.js"></script> -->
+    <script src="/src/js/swiper.min.js"></script>
+
+</head>
+
+<body class="body">
+    <header id="header" class="header-section  "></header>
+    <div class="load-section">
+        <div class="content">
+            <div class="image-group  image-group-one">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+            </div>
+            <div class="image-group  image-group-two">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+            </div>
+            <div class="image-group   image-group-one">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+            </div>
+            <div class="image-group  image-group-two">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+            </div>
+            <div class="image-group   image-group-one">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+                <img src="/src/images/collection/o1.png" alt="o">
+                <img src="/src/images/collection/m1.png" alt="m">
+            </div>
+
+        </div>
+      
+    </div>
+    <div class="page-content w1920" style="padding: 0;">
+        <div class="collection-page ">
+            <div class="fixed-bg">
+                <div class="content wow fadeInUp" data-wow-delay="3s">
+                    <h1>MOMO</h1>
+                    <h2>COLLECTION | 2023 S/S</h2>
+                    <p>okayama kamakura shanghai</p>
+                </div>
+            </div>
+            <div class="index-section2">
+              <img src="/src/images/collection/1.jpg" alt="">
+              <img src="/src/images/collection/2.jpg" alt="">
+              <img src="/src/images/collection/3.jpg" alt="">
+              <!-- <img src="/src/images/collection/4.jpg" alt=""> -->
+              <img src="/src/images/collection/7.jpg" alt="">
+              <img src="/src/images/collection/5.jpg" alt="">
+              <img src="/src/images/collection/6.jpg" alt="">
+              <img src="/src/images/collection/8.jpg" alt="">
+            </div>
+          
+        </div>
+    </div>
+
+    <footer id="footer" class="footer-section  "></footer>
+    <script type="text/javascript">
+        $(function () {
+            var wow = new WOW({
+                boxClass: 'wow',
+                animateClass: 'animated',
+                offset: 50,
+                mobile: true,
+                live: true
+            });
+
+            wow.init();
+
+            Promise.all([
+                new Promise(resolve => $('#header').load('/views/public/header.html', resolve)),
+                new Promise(resolve => $('#footer').load('/views/public/footer.html', resolve))
+            ]).then(() => {
+                // 两个文件都加载完成后引入 header.js
+                $.getScript('/src/js/public/header.js', function () {
+                    console.log('Header.js loaded and executed');
+                });
+                $.getScript('/src/js/public/footer.js', function () {
+                    console.log('Footer.js loaded and executed');
+                })
+            });
+        })
+
+
+    </script>
+    <script>
+        $(function () {
+            $('.body').css({ "overflow": 'hidden' })
+            // console.log($(window).scrollTop(), 123)
+            $('.load-section .image-group-one').addClass('imgInLeft')
+            $('.load-section .image-group-two').addClass('imgInRight')
+
+            setTimeout(function () {
+                $('.load-section').stop().animate({ 'top': '120%' }, 500)
+                $('.load-section').css({ "z-index": '-1', "opacity": 0 })
+                $('.load-section .image-group img').animate({ "opacity": 0 }, 1000)
+                $('.body').css({ "overflow": 'auto' })
+            }, 2000)
+
+         
+
+      
+        })
+    </script>
+</body>
+
+</html>

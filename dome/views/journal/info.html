@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Betty Smith</title>
+    <link rel="stylesheet" href="/src/css/animate.min.css">
+    <!-- <link rel="stylesheet" href="/src/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/src/css/swiper.min.css">
+    <link rel="stylesheet" href="/src/css/common.css">
+    <link rel="stylesheet" href="/src/css/index.css">
+  
+    <script src="/src/js/rem.js"></script>
+
+    <script src="/src/js/jquery.min.js"></script>
+    <script src="/src/js/jquery.textillate.js"></script>
+    <script src="/src/js/wow.min.js"></script>
+    <script src="/src/js/gsap.min.js"></script>
+    <script src="/src/js/ScrollTrigger.min.js"></script>
+    <script src="/src/js/three.min.js"></script>
+    <script src="/src/js/swiper.min.js"></script>
+    <script src="/src/js/layer/layer.js"></script>
+</head>
+
+<body class="body">
+    <header id="header" class="header-section  otherPage"></header>
+
+    <div class="page-content w1920">
+        <div class="news-info main">
+            <div class="info-section">
+                <div class="news-item">
+                    <div class="time">25 February 2023</div>
+                    <h3>One day spent happily with tokyobike bicycles.</h3>
+                    <div class="back">
+                        <a href="/views/journal/index.html" > <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="20">
+                            <path
+                                d="m24,11.5H1.266l4.617-4.617-.707-.707L.458,10.894c-.61.61-.61,1.604,0,2.215l4.717,4.716.707-.707L1.265,12.5h22.735v-1Z"
+                                fill="#000" />
+                        </svg> BACK TO INDEX</a>
+                    </div>
+                </div>
+               <div class="details-section">
+                    <div class="image">
+                        <img src="/src/images/journal4.jpg" alt="">
+                    </div>
+                    <div class="details">
+                        We have worked with Japan Designer to create a collection inspired by the old story happened in Okayama called Momotaro and his friends. <br> The collection includes men’s and women’s apparel and accessories, and will release on MOMO Dayand will release on will
+                    </div>
+                    <div class="article-nav">
+                        <a href="/views/journal/info.html">PREV</a>
+                        <a href="/views/journal/info.html">NEXT</a>
+                        <a href="/views/journal/index.html" > BACK TO INDEX</a>
+                    </div>
+               </div>
+            </div>
+           
+        </div>
+    </div>
+    <footer id="footer" class="footer-section  "></footer>
+    <script type="text/javascript">
+        $(function () {
+            var wow = new WOW({
+                boxClass: 'wow',
+                animateClass: 'animated',
+                offset: 50,
+                mobile: true,
+                live: true
+            });
+
+            wow.init();
+            Promise.all([
+                new Promise(resolve => $('#header').load('/views/public/header.html', resolve)),
+                new Promise(resolve => $('#footer').load('/views/public/footer.html', resolve))
+            ]).then(() => {
+                // 两个文件都加载完成后引入 header.js
+                $.getScript('/src/js/public/header.js', function () {
+                    console.log('Header.js loaded and executed');
+                });
+                $.getScript('/src/js/public/footer.js', function () {
+                    console.log('Footer.js loaded and executed');
+                })
+            });
+        })
+
+    </script>
+    <script>
+        $(function () {
+            function mouse(banner, swiper) {
+                let ban = banner + " .swiper-slide";
+                $(ban).mouseenter(function () {
+                    swiper.autoplay.stop();
+                })
+                // 鼠标移出开始自动滚动
+                $(ban).mouseleave(function () {
+                    swiper.autoplay.start();
+                })
+            }
+            var mySwiper = new Swiper('#proban', {
+                loop: true,
+                speed: 1000,
+                autoplay: {
+                    delay: 100000,
+                    stopOnLastSlide: false,
+                    disableOnInteraction: false,
+                },
+                parallax: true,
+                // 自定义分页器
+                autoplayDisableOnInteraction: false,
+                // 如果需要前进后退按钮
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            })
+            mouse("#proban", mySwiper);
+        })
+    </script>
+</body>
+
+</html>

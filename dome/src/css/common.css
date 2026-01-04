@@ -1,0 +1,297 @@
+@charset "utf-8";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: #fff;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/css/webfont/Roboto/Roboto-Regular.ttf") 
+  ;
+
+}
+@font-face {
+  font-family: 'OpenSans';
+  src: url("/src/css/webfont/Open_Sans/OpenSans-Regular.ttf")  ;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url("/src/css/webfont/Poppins/Poppins-Medium.ttf")  ;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family:"Poppins", "Roboto", Arial, Helvetica,Verdana,'Microsoft YaHei';
+  /* font-family: Arial, Helvetica,Verdana,'Microsoft YaHei'; */
+  /* font-family:helvetica, Arial, Helvetica, Verdana, 'Microsoft YaHei','Franklin gothic heavy','times new roman'; */
+  border: 0;
+  outline: medium;
+  text-shadow: none;
+  text-decoration: none;
+}
+
+body {
+  color: #140700;
+  font-size: 14px;
+  line-height: 1.5;
+  position: relative;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* min-width: 1200px; */
+  margin: 0 auto;
+}
+
+input {
+  vertical-align: middle;
+}
+
+textarea {
+  resize: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+hr {
+  border-width: 1px;
+  border-style: inset;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a,
+a:link,
+a:active,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+img,
+i {
+  display: block;
+}
+
+i,
+em {
+  font-style: normal;
+}
+
+html {
+  height: 100%;
+  /* font-family: 'helvetica', 'Franklin gothic heavy', 'times new roman'; */
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clear:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clear {
+  zoom: 1;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #140700;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #140700;
+}
+
+
+
+
+
+
+/*input placeholder 样式 */
+
+::-webkit-input-placeholder {
+  color: #999999;
+}
+
+:-moz-placeholder {
+  color: #999999;
+}
+
+::-moz-placeholder {
+  color: #999999;
+}
+
+:-ms-input-placeholder {
+  color: #999999;
+}
+
+/*修改滚动条*/
+
+/* ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px transparent;
+  background: #f8f8f8;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: #bbb;
+} */
+
+/* 无内容 */
+.no-goods,
+.no-network {
+  padding-top: 100px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.no-goods img {
+  display: block;
+  margin: 0 auto 30px;
+  width: 220px;
+  max-height: 105px;
+}
+
+.no-network img {
+  display: block;
+  margin: 0 auto 30px;
+  width: 222px;
+  height: 160px;
+}
+
+.no-goods p,
+.no-network p {
+  font-size: 14px;
+  color: #666666;
+  line-height: 20px;
+}
+
+/* 更改layer样式 */
+.layui-layer-btn {
+  text-align: center !important;
+  padding-bottom: 28px !important;
+}
+
+.layui-layer-btn .layui-layer-btn0 {
+  display: block;
+  margin: 0 auto !important;
+  border-radius: 0 !important;
+  width: 88px !important;
+  text-align: center !important;
+  height: 34px !important;
+  line-height: 34px !important;
+  border-color: #237ed2 !important;
+  background-color: #237ed2 !important;
+}
+
+.layui-layer-btn .layui-layer-btn0:hover {
+  background: #348eed !important;
+  border-color: #348eed !important;
+}
+
+.iframe-video {
+  width: 100%;
+  height: 470px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.iframe-video .video-preview {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.iframe-video .video-preview::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.iframe-video .video-preview::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../images/media-icon.png) no-repeat center;
+  z-index: 2;
+}
+
+.iframe-video .video-preview img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.iframe-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+embed {
+  display: block;
+  background: #348eed;
+  width: 100%;
+  height: auto;
+}
